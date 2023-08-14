@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DevsuTest.Context\DevsuTest.Context.csproj" />
+    <ProjectReference Include="..\DevsuTest.Core\DevsuTest.Core.csproj" />
+    <ProjectReference Include="..\DevsuTest.Domain\DevsuTest.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
