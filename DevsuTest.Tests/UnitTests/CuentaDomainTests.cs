@@ -1,5 +1,4 @@
-﻿using DevsuTest.Application.DTO;
-using DevsuTest.Domain;
+﻿using DevsuTest.Domain;
 
 namespace DevsuTest.Tests.UnitTests
 {

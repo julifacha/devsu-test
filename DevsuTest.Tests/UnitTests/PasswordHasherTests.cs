@@ -1,15 +1,4 @@
-﻿using DevsuTest.Application.DTO;
-using DevsuTest.Application.Validators;
-using DevsuTest.Core.Interfaces;
-using DevsuTest.Domain;
-using DevsuTest.Infrastructure.Security;
-using DevsuTest.Repository;
-using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DevsuTest.Core.Security;
 
 namespace DevsuTest.Tests.UnitTests
 {
