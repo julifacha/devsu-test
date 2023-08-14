@@ -19,7 +19,7 @@ public class Cuenta
     public virtual Cliente Cliente { get; set; }
 
     public virtual ICollection<Movimiento> Movimientos { get; set; } = new List<Movimiento>();
-    public decimal SaldoDisponible => Movimientos?.OrderByDescending(m => m.Fecha).FirstOrDefault()?.Saldo ?? SaldoInicial;
+    public decimal SaldoDisponible => Movimientos?.OrderByDescending(m => m.Id).FirstOrDefault()?.Saldo ?? SaldoInicial;
     protected Cuenta() { }
     protected Cuenta(int clienteId, int numeroCuenta, TipoCuentaEnum tipoCuenta, decimal saldoInicial)
     {
@@ -43,8 +43,8 @@ public class Cuenta
     public bool ValidarCupoDiario(decimal valorARetirar, decimal limiteRetiro)
     { 
         decimal valorRetiradoHoy = Movimientos
-            .Where(m => m.Fecha.Date == DateTime.Today)
-            .Sum(x => x.TipoMovimiento == TipoMovimientoEnum.Retiro ? x.Valor : -x.Valor);
+            .Where(m => m.Fecha.Date == DateTime.Today && m.TipoMovimiento == TipoMovimientoEnum.Retiro)
+            .Sum(x => x.Valor);
         return valorRetiradoHoy + valorARetirar <= limiteRetiro;
     }
 

@@ -3,18 +3,20 @@ using DevsuTest.Domain;
 using DevsuTest.Repository.UOW;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace DevsuTest.Application.Validators
 {
     public class MovimientoValidator : AbstractValidator<MovimientoDto>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly decimal LIMITE_DIARIO_RETIRO;
         private Cuenta? _cuenta;
-        private const int LIMITE_DIARIO_RETIRO = 1000;
 
-        public MovimientoValidator(IUnitOfWork unitOfWork)
+        public MovimientoValidator(IUnitOfWork unitOfWork, IConfiguration configuration)
         {
             _unitOfWork = unitOfWork;
+            LIMITE_DIARIO_RETIRO = decimal.Parse(configuration.GetRequiredSection("LimiteDiarioRetiro").Value ?? "1000");
 
             RuleFor(m => m.CuentaId)
                 .NotNull()

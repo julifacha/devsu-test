@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
+using DevsuTest.Application.DTO;
+using DevsuTest.Application.Services.Interfaces;
+using DevsuTest.Core.Exceptions;
+using DevsuTest.Core.Interfaces;
 using DevsuTest.Domain;
 using DevsuTest.Repository.UOW;
-using DevsuTest.Application.DTO;
 using FluentValidation;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
-using DevsuTest.Application.Services.Interfaces;
-using DevsuTest.Core.Interfaces;
-using DevsuTest.Core.Exceptions;
 
 namespace DevsuTest.Application.Services.Implementations
 {

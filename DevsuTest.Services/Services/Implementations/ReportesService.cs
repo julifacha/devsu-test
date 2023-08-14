@@ -1,6 +1,6 @@
 ﻿using DevsuTest.Application.Services.Interfaces;
-using DevsuTest.Repository.Reportes;
 using DevsuTest.Repository.DTO;
+using DevsuTest.Repository.Reportes;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevsuTest.Application.Services.Implementations
