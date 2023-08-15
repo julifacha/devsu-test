@@ -1,5 +1,6 @@
 ﻿using DevsuTest.Application.Services.Interfaces;
-using DevsuTest.Repository.DTO;
+using DevsuTest.Domain;
+using DevsuTest.Domain.DTO;
 using DevsuTest.Repository.Reportes;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,9 +14,14 @@ namespace DevsuTest.Application.Services.Implementations
             _reportesRepository = reportesRepository;
         }
 
-        public async Task<IEnumerable<EstadoDeCuentaDto>> GetEstadoDeCuenta(int clienteId, DateTime? fechaDesde, DateTime? fechaHasta)
+        public async Task<IEnumerable<EstadoCuentaDto>> GetEstadoCuenta(int clienteId, DateTime? fechaDesde, DateTime? fechaHasta)
         {
-            return await _reportesRepository.GetEstadoDeCuenta(clienteId, fechaDesde, fechaHasta).ToListAsync();
+            return await _reportesRepository.GetEstadoCuenta(clienteId, fechaDesde, fechaHasta).ToListAsync();
+        }
+
+        public async Task<IEnumerable<ItemListadoMovimientosDto>> GetListadoMovimientos(int clienteId, DateTime? fechaDesde, DateTime? fechaHasta)
+        {
+            return await _reportesRepository.GetListadoMovimientos(clienteId, fechaDesde, fechaHasta).ToListAsync();
         }
     }
 }

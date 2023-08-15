@@ -1,9 +1,10 @@
-﻿using DevsuTest.Repository.DTO;
+﻿using DevsuTest.Domain.DTO;
 
 namespace DevsuTest.Repository.Reportes
 {
     public interface IReportesRepository
     {
-        IQueryable<EstadoDeCuentaDto> GetEstadoDeCuenta(int cliente, DateTime? fechaDesde, DateTime? fechaHasta);
+        IQueryable<ItemListadoMovimientosDto> GetListadoMovimientos(int cliente, DateTime? fechaDesde, DateTime? fechaHasta);
+        IQueryable<EstadoCuentaDto> GetEstadoCuenta(int cliente, DateTime? fechaDesde, DateTime? fechaHasta);
     }
 }

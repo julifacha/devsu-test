@@ -2,9 +2,9 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace DevsuTest.Repository.DTO
+namespace DevsuTest.Domain.DTO
 {
-    public class EstadoDeCuentaDto
+    public class ItemListadoMovimientosDto
     {
         public DateTime Fecha { get; set; }
         public string Cliente { get; set; }
