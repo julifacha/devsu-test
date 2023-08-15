@@ -22,7 +22,7 @@ public class Movimiento
     protected Movimiento(int cuentaId, TipoMovimientoEnum tipoMovimiento, decimal valor, decimal saldo)
     {
         CuentaId = cuentaId;
-        Fecha = DateTime.UtcNow;
+        Fecha = DateTime.Now;
         TipoMovimiento = tipoMovimiento;
         Valor = valor;
         Saldo = saldo;

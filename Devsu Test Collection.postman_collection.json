@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "516a8b54-480c-4d56-9756-223f3cd25b60",
+		"name": "Devsu Test Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13925276"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Create Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Juan Osorio\",\r\n    \"genero\": \"M\",\r\n    \"fechaNacimiento\": \"1985-01-12T12:00:00\",\r\n    \"identificacion\": \"39161715\",\r\n    \"direccion\": \"13 junio y Equinoccial\",\r\n    \"telefono\": \"098874587\",\r\n    \"contraseña\": 7894\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{devsuServerUrl}}clientes",
+							"host": [
+								"{{devsuServerUrl}}clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Cliente",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"op\": \"add\",\r\n    \"path\": \"/nombre\",\r\n    \"value\": \"Barry\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{devsuServerUrl}}clientes/{{clienteId}}",
+							"host": [
+								"{{devsuServerUrl}}clientes"
+							],
+							"path": [
+								"{{clienteId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}clientes/{{clienteId}}",
+							"host": [
+								"{{devsuServerUrl}}clientes"
+							],
+							"path": [
+								"{{clienteId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}clientes/",
+							"host": [
+								"{{devsuServerUrl}}clientes"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Raul perez\",\r\n    \"genero\": \"M\",\r\n    \"fechaNacimiento\": \"1985-01-12T12:00:00\",\r\n    \"identificacion\": \"39161715\",\r\n    \"direccion\": \"13 junio y Equinoccial\",\r\n    \"telefono\": \"098874587\",\r\n    \"contraseña\": 7894,\r\n    \"estado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{devsuServerUrl}}clientes/{{clienteId}}",
+							"host": [
+								"{{devsuServerUrl}}clientes"
+							],
+							"path": [
+								"{{clienteId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}clientes/{{clienteId}}",
+							"host": [
+								"{{devsuServerUrl}}clientes"
+							],
+							"path": [
+								"{{clienteId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "Create Cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCuenta\": 5855451,\r\n    \"tipoCuenta\": \"Ahorro\",\r\n    \"saldoInicial\": 1000,\r\n    \"clienteId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{devsuServerUrl}}cuentas",
+							"host": [
+								"{{devsuServerUrl}}cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}cuentas/{{cuentaId}}",
+							"host": [
+								"{{devsuServerUrl}}cuentas"
+							],
+							"path": [
+								"{{cuentaId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cuentas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}cuentas/",
+							"host": [
+								"{{devsuServerUrl}}cuentas"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cuenta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCuenta\": 123456,\r\n    \"tipoCuenta\": \"Corriente\",\r\n    \"saldoInicial\": 1000,\r\n    \"clienteId\": 3,\r\n    \"estado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{devsuServerUrl}}cuentas/{{cuentaId}}/",
+							"host": [
+								"{{devsuServerUrl}}cuentas"
+							],
+							"path": [
+								"{{cuentaId}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Cuenta",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"op\": \"add\",\r\n    \"path\": \"/numeroCuenta\",\r\n    \"value\": 1234\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{devsuServerUrl}}cuentas/{{cuentaId}}",
+							"host": [
+								"{{devsuServerUrl}}cuentas"
+							],
+							"path": [
+								"{{cuentaId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}cuentas/{{cuentaId}}",
+							"host": [
+								"{{devsuServerUrl}}cuentas"
+							],
+							"path": [
+								"{{cuentaId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Create Movimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cuentaId\": 6,\r\n    \"tipoMovimiento\": \"Retiro\",\r\n    \"valor\": 500\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{devsuServerUrl}}movimientos/",
+							"host": [
+								"{{devsuServerUrl}}movimientos"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movimiento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}movimientos/{{movimientoId}}",
+							"host": [
+								"{{devsuServerUrl}}movimientos"
+							],
+							"path": [
+								"{{movimientoId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movimiento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}movimientos/{{movimientoId}}",
+							"host": [
+								"{{devsuServerUrl}}movimientos"
+							],
+							"path": [
+								"{{movimientoId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movimientos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}movimientos/",
+							"host": [
+								"{{devsuServerUrl}}movimientos"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reportes",
+			"item": [
+				{
+					"name": "Reporte Estado Cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}reportes/estado-cuenta?clienteId={{clienteId}}",
+							"host": [
+								"{{devsuServerUrl}}reportes"
+							],
+							"path": [
+								"estado-cuenta"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "{{clienteId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reporte Listado Movimientos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{devsuServerUrl}}reportes/listado-movimientos?clienteId={{clienteId}}&fechaDesde=2023-08-14T00:00:00&fechaHasta=2023-08-14T23:59:59",
+							"host": [
+								"{{devsuServerUrl}}reportes"
+							],
+							"path": [
+								"listado-movimientos"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "{{clienteId}}"
+								},
+								{
+									"key": "fechaDesde",
+									"value": "2023-08-14T00:00:00"
+								},
+								{
+									"key": "fechaHasta",
+									"value": "2023-08-14T23:59:59"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "devsuServerUrl",
+			"value": "https://localhost:7297/"
+		},
+		{
+			"key": "movimientoId",
+			"value": "14"
+		},
+		{
+			"key": "cuentaId",
+			"value": "1"
+		},
+		{
+			"key": "clienteId",
+			"value": "1"
+		}
+	]
+}
